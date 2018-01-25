@@ -17,9 +17,9 @@ IBinanceClient.KeepAliveUserDataStream(string userDataListenKey)
 ```
 
 ### `CloseUserDataStream:void`
-Pings a User Data stream to keep it alive. Despite this method returning the `UserDataStreamResponse` type the API currently doesn't return anything.
+Closes a User Data stream.
 ```c#
-IBinanceClient.KeepAliveUserDataStream(string userDataListenKey)
+IBinanceClient.CloseUserDataStream(string userDataListenKey)
 ```
 
 ## General Endpoints
