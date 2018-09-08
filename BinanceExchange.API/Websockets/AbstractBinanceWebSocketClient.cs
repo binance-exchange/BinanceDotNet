@@ -6,6 +6,7 @@ using BinanceExchange.API.Client.Interfaces;
 using BinanceExchange.API.Enums;
 using BinanceExchange.API.Extensions;
 using BinanceExchange.API.Models.WebSocket;
+using BinanceExchange.API.Models.WebSocket.Interfaces;
 using BinanceExchange.API.Utility;
 using log4net;
 using Newtonsoft.Json;
@@ -135,6 +136,21 @@ namespace BinanceExchange.API.Websockets
             Guard.AgainstNullOrEmpty(symbol, nameof(symbol));
             Logger.Debug("Connecting to Trades Web Socket");
             var endpoint = new Uri($"{BaseWebsocketUri}/{symbol.ToLower()}@aggTrade");
+            return CreateBinanceWebSocket(endpoint, messageEventHandler);
+        }
+
+        /// <summary>
+        /// Connect to the Trades WebSocket
+        /// </summary>
+        /// <param name="symbol"></param>
+        /// <param name="messageEventHandler"></param>
+        /// <returns></returns>https://github.com/glitch100/BinanceDotNet/issues
+        public Guid ConnectToTradesWebSocketCombined(string symbols, BinanceWebSocketMessageHandler<BinanceCombinedTradeData> messageEventHandler)
+        {
+            Guard.AgainstNullOrEmpty(symbols, nameof(symbols));
+            symbols = PrepareCombinedSymbols.CombinedTrade(symbols);
+            Logger.Debug("Connecting to Combined Trades Web Socket");
+            var endpoint = new Uri($"{CombinedWebsocketUri}/{symbols}");
             return CreateBinanceWebSocket(endpoint, messageEventHandler);
         }
 
