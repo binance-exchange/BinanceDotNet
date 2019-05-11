@@ -9,7 +9,7 @@ namespace BinanceExchange.API.Models.Response
     /// Response providing Account Trade information
     /// </summary>
     [DataContract]
-    public class AccountTradeReponse
+    public class AccountTradeResponse
     {
         [DataMember(Order = 1)]
         public long Id { get; set; }

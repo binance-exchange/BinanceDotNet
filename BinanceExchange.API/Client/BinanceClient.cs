@@ -324,10 +324,10 @@ namespace BinanceExchange.API.Client
         /// <param name="request"></param>
         /// <param name="receiveWindow"></param>
         /// <returns></returns>
-        public async Task<List<AccountTradeReponse>> GetAccountTrades(AllTradesRequest request, int receiveWindow = -1)
+        public async Task<List<AccountTradeResponse>> GetAccountTrades(AllTradesRequest request, int receiveWindow = -1)
         {
             receiveWindow = SetReceiveWindow(receiveWindow);
-            return await _apiProcessor.ProcessGetRequest<List<AccountTradeReponse>>(Endpoints.Account.AccountTradeList(request), receiveWindow);
+            return await _apiProcessor.ProcessGetRequest<List<AccountTradeResponse>>(Endpoints.Account.AccountTradeList(request), receiveWindow);
         }
 
         /// <summary>

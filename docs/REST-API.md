@@ -120,7 +120,7 @@ Get current account information.
 IBinanceClient.GetAccountInformation(int receiveWindow = 5000)
 ```
 
-### `GetAccountTrades:List<AccountTradeReponse>`
+### `GetAccountTrades:List<AccountTradeResponse>`
 Get trades for a specific account and symbol.
 ```c#
 IBinanceClient.GetAccountTrades(AllTradesRequest request, int receiveWindow = 5000)

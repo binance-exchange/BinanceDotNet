@@ -139,7 +139,7 @@ namespace BinanceExchange.API.Client.Interfaces
         /// <param name="request"></param>
         /// <param name="receiveWindow"></param>
         /// <returns></returns>
-        Task<List<AccountTradeReponse>> GetAccountTrades(AllTradesRequest request, int receiveWindow = 5000);
+        Task<List<AccountTradeResponse>> GetAccountTrades(AllTradesRequest request, int receiveWindow = 5000);
 
         /// <summary>
         /// Sends a request to withdraw to an address
